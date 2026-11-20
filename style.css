@@ -19,8 +19,7 @@
   /* theme tokens — overridden inside .dark */
   --bg: var(--ivory);
   --text: var(--ink);
-  --muted: #66635D;
-  --rule: rgba(32, 33, 31, .85);
+a  --rule: rgba(32, 33, 31, .85);
   --rule-soft: rgba(32, 33, 31, .18);
   --accent: var(--terra);
   --accent-ink: var(--terra-deep);
@@ -519,7 +518,8 @@ a:hover .arrow, a:focus-visible .arrow, button:hover .arrow, button:focus-visibl
   .service-row .list { grid-template-columns:1fr; }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* Mobile motion is retained by request; honor reduced motion on larger screens. */
+@media (prefers-reduced-motion: reduce) and (min-width: 861px) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; animation-delay: 0s !important; transition-duration: .001ms !important; }
   .hero__title .line, .hero__sub, .hero__cta, .hero .label, .orbitart { opacity: 1; transform: none; }
